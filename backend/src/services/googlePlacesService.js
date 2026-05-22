@@ -4,7 +4,7 @@ const BASE_URL = 'https://maps.googleapis.com/maps/api';
 const API_KEY = process.env.GOOGLE_MAPS_API_KEY;
 
 /**
- * Map Traveloop-friendly category names to Google Places API types.
+ * Map NextStop-friendly category names to Google Places API types.
  */
 const CATEGORY_TYPE_MAP = {
   'tourist attractions': 'tourist_attraction',

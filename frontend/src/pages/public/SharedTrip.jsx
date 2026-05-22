@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { MapPin, DollarSign, Calendar, Copy, Check, Plane } from 'lucide-react';
+import { MapPin, DollarSign, Calendar, Copy, Check, Navigation } from 'lucide-react';
 import { tripsAPI } from '../../api';
 import { formatDate, formatCurrency, getTotalBudget, CATEGORY_COLORS, CATEGORY_ICONS_MAP } from '../../utils';
 
@@ -31,26 +31,26 @@ export default function SharedTrip() {
   );
 
   if (error) return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-surface-50 gap-4">
-      <Plane className="w-12 h-12 text-gray-300" />
-      <h2 className="text-xl font-bold text-gray-600">Trip not found</h2>
-      <p className="text-gray-400">{error}</p>
-      <button onClick={() => navigate('/login')} className="btn-primary">Go to Traveloop</button>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-surface-50 dark:bg-zinc-950 gap-4">
+      <Navigation className="w-12 h-12 text-gray-300 rotate-45" />
+      <h2 className="text-xl font-bold text-gray-600 dark:text-zinc-400">Trip not found</h2>
+      <p className="text-gray-400 dark:text-zinc-500">{error}</p>
+      <button onClick={() => navigate('/login')} className="btn-primary">Go to NextStop</button>
     </div>
   );
 
   return (
     <div className="min-h-screen bg-surface-50">
       {/* Top bar */}
-      <div className="bg-white border-b border-gray-100 sticky top-0 z-10">
+      <div className="bg-white dark:bg-zinc-900 border-b border-gray-100 dark:border-zinc-800 sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
-              <Plane className="w-4 h-4 text-white" />
+              <Navigation className="w-4 h-4 text-white rotate-45" />
             </div>
-            <span className="font-bold text-gray-900">Traveloop</span>
-            <span className="text-gray-300 mx-2">·</span>
-            <span className="text-gray-500 text-sm">Shared Itinerary</span>
+            <span className="font-bold text-gray-900 dark:text-white">NextStop</span>
+            <span className="text-gray-300 dark:text-zinc-700 mx-2">·</span>
+            <span className="text-gray-500 dark:text-zinc-400 text-sm">Shared Itinerary</span>
           </div>
           <div className="flex gap-2">
             <button onClick={handleCopy} className="btn-secondary text-sm">
@@ -114,9 +114,9 @@ export default function SharedTrip() {
         </div>
 
         {/* CTA */}
-        <div className="bg-gradient-to-br from-primary-600 to-accent-500 rounded-3xl p-8 text-white text-center">
+        <div className="bg-gradient-to-br from-primary-600 to-accent-500 rounded-3xl p-8 text-white text-center shadow-xl shadow-primary-500/10">
           <h3 className="text-2xl font-bold mb-2">Love this trip?</h3>
-          <p className="text-white/80 mb-6">Join Traveloop and start planning your own dream adventure for free.</p>
+          <p className="text-white/80 mb-6">Join NextStop and start planning your own dream adventure for free.</p>
           <button onClick={() => navigate('/signup')} className="bg-white text-primary-600 font-bold px-8 py-3 rounded-xl hover:bg-primary-50 transition-colors">
             Get Started Free →
           </button>

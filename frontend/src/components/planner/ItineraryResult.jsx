@@ -210,7 +210,7 @@ function ActivityCard({ activity = {}, isLast, mood }) {
     <motion.div
       variants={itemVariants}
       whileHover={{ x: 4, borderColor: '#4f46e5' }}
-      className="group relative flex gap-4 p-4 bg-white border border-slate-150 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]"
+      className="group relative flex gap-4 p-4 bg-white border border-slate-200 rounded-2xl transition-all duration-300 shadow-sm hover:shadow-[0_12px_24px_rgba(0,0,0,0.04)]"
     >
       {/* Timeline connection line */}
       {!isLast && (
@@ -219,8 +219,8 @@ function ActivityCard({ activity = {}, isLast, mood }) {
 
       {/* Time icon bubble */}
       <div className="flex-shrink-0 flex flex-col items-center gap-1 pt-0.5 relative z-10">
-        <div className="w-8 h-8 bg-slate-50 border border-slate-205 rounded-xl flex items-center justify-center shadow-inner">
-          <TimeIcon className="w-4 h-4 text-slate-655" />
+        <div className="w-8 h-8 bg-slate-50 border border-slate-200 rounded-xl flex items-center justify-center shadow-inner">
+          <TimeIcon className="w-4 h-4 text-slate-600" />
         </div>
       </div>
 
@@ -244,7 +244,7 @@ function ActivityCard({ activity = {}, isLast, mood }) {
               {name}
             </p>
             {estimatedCost > 0 && (
-              <span className="flex-shrink-0 text-sm font-black text-indigo-650 bg-slate-50 border border-slate-200/80 px-2.5 py-1 rounded-lg">
+              <span className="flex-shrink-0 text-sm font-black text-primary-600 bg-slate-50 border border-slate-200/80 px-2.5 py-1 rounded-lg">
                 {formatCurrency(estimatedCost)}
               </span>
             )}
@@ -392,8 +392,8 @@ export default function ItineraryResult({ result, onRegenerate, onSave }) {
 
         {/* Color Bleed Gradients */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-indigo-600/20 rounded-full blur-[100px] mix-blend-screen animate-blob" />
-          <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-purple-600/20 rounded-full blur-[120px] mix-blend-screen animate-blob animation-delay-2000" />
+          <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-primary-600/20 rounded-full blur-[100px] mix-blend-screen animate-blob" />
+          <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent-500/20 rounded-full blur-[120px] mix-blend-screen animate-blob animation-delay-2000" />
         </div>
 
         {/* Cinematic dark gradients for text contrast */}
@@ -444,7 +444,7 @@ export default function ItineraryResult({ result, onRegenerate, onSave }) {
 
             {/* Budget status banner */}
             <div className="inline-flex items-center gap-2 bg-black/30 border border-white/15 backdrop-blur-md rounded-2xl px-4 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.15)]">
-              <Wallet className="w-4 h-4 text-purple-300" />
+              <Wallet className="w-4 h-4 text-primary-300" />
               <span className="text-xs md:text-sm font-extrabold text-white tracking-tight">{budgetStatus}</span>
             </div>
           </div>
@@ -466,8 +466,8 @@ export default function ItineraryResult({ result, onRegenerate, onSave }) {
             label="Budget Category"
             value={budgetCategory}
             sub={`₹${budgetInput?.toLocaleString()} total`}
-            colorClass="from-purple-500/5 to-indigo-500/5 hover:border-purple-300 text-purple-600"
-            iconColorClass="bg-purple-100 text-purple-600"
+            colorClass="from-primary-500/5 to-primary-500/5 hover:border-primary-300 text-primary-600"
+            iconColorClass="bg-primary-100 text-primary-600"
           />
           <InsightCard
             icon={BarChart2}
@@ -563,7 +563,7 @@ export default function ItineraryResult({ result, onRegenerate, onSave }) {
               onClick={onRegenerate}
               className="flex-1 py-4 text-base font-extrabold text-slate-800 bg-white hover:bg-slate-50 border border-slate-200 shadow-sm rounded-2xl flex items-center justify-center gap-2 transition-all duration-300 hover:border-slate-400"
             >
-              <Zap className="w-4 h-4 text-slate-650" />
+              <Zap className="w-4 h-4 text-slate-600" />
               Back to Form
             </button>
           )}

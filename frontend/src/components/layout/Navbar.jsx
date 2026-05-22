@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { Plane, Menu, X, LayoutDashboard, Map, Search, User, LogOut, Plus, Hotel } from 'lucide-react';
+import { Plane, Menu, X, LayoutDashboard, Map, Search, User, LogOut, Plus, Hotel, Sun, Moon, Compass } from 'lucide-react';
 import useAuthStore from '../../store/authStore';
+import useThemeStore from '../../store/themeStore';
 
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -15,26 +16,32 @@ const navItems = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const { user, logout } = useAuthStore();
+  const { theme, toggleTheme } = useThemeStore();
   const navigate = useNavigate();
 
   const handleLogout = () => { logout(); navigate('/login'); };
 
   return (
-    <header className="lg:hidden sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 shadow-sm">
+    <header className="lg:hidden sticky top-0 z-50 bg-white/90 dark:bg-[#0b1021]/90 backdrop-blur border-b border-gray-100 dark:border-slate-800 shadow-sm">
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center">
-            <Plane className="w-4 h-4 text-white" />
+            <Compass className="w-4 h-4 text-white" />
           </div>
-          <span className="text-lg font-bold font-display gradient-text">Traveloop</span>
+          <span className="text-lg font-bold font-display gradient-text">NextStop</span>
         </div>
-        <button onClick={() => setOpen(!open)} className="p-2 rounded-xl hover:bg-gray-100 transition-colors">
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
+        <div className="flex items-center gap-2">
+          <button onClick={toggleTheme} className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-800 text-gray-500 transition-colors" title="Toggle Theme">
+            {theme === 'dark' ? <Moon className="w-5 h-5 text-accent-400" /> : <Sun className="w-5 h-5 text-amber-500" />}
+          </button>
+          <button onClick={() => setOpen(!open)} className="p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors">
+            {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
-        <div className="px-4 pb-4 space-y-1 animate-slide-up border-t border-gray-100 pt-3">
+        <div className="px-4 pb-4 space-y-1 animate-slide-up border-t border-gray-100 dark:border-slate-800 pt-3">
           <button onClick={() => { navigate('/trips/create'); setOpen(false); }} className="btn-primary w-full text-sm mb-3">
             <Plus className="w-4 h-4" /> Plan New Trip
           </button>
@@ -44,7 +51,7 @@ export default function Navbar() {
               <Icon className="w-5 h-5" /> {label}
             </NavLink>
           ))}
-          <button onClick={handleLogout} className="btn-ghost w-full text-sm text-red-500 hover:bg-red-50">
+          <button onClick={handleLogout} className="btn-ghost w-full text-sm text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20">
             <LogOut className="w-4 h-4" /> Logout
           </button>
         </div>

@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
 import ProtectedRoute from './components/ui/ProtectedRoute';
+import useThemeStore from './store/themeStore';
 
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
@@ -22,6 +24,11 @@ import DiscoverDestinations from './pages/activities/DiscoverDestinations';
 import BookingHub from './pages/booking/BookingHub';
 
 export default function App() {
+  const { initTheme } = useThemeStore();
+  useEffect(() => {
+    initTheme();
+  }, [initTheme]);
+
   return (
     <BrowserRouter>
       <Toaster

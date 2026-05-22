@@ -1,7 +1,7 @@
 /**
  * plannerEngine.js
  * ─────────────────────────────────────────────────────────────────
- * Smart Itinerary Generation Engine for Traveloop.
+ * Smart Itinerary Generation Engine for NextStop.
  * Generates highly realistic, destination-aware, geographically
  * clustered, and mood-personalized itineraries.
  *

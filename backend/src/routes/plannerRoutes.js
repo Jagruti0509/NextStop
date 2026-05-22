@@ -8,7 +8,7 @@ const { protect } = require('../middleware/auth');
  * POST /api/planner/generate
  *
  * Requires a valid JWT (Bearer token) so only authenticated
- * Traveloop users can invoke the planner and consume the
+ * NextStop users can invoke the planner and consume the
  * Google Places API quota on their behalf.
  *
  * Body:

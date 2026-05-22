@@ -1,19 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Sora', 'Outfit', 'Inter', 'sans-serif'],
       },
       colors: {
         primary: {
-          50:  '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
+          50:  '#f5f6ff',
+          100: '#ebedff',
+          200: '#dcdfff',
+          300: '#c2c7ff',
+          400: '#9fa6ff',
           500: '#6366f1',
           600: '#4f46e5',
           700: '#4338ca',
@@ -21,16 +22,28 @@ export default {
           900: '#312e81',
         },
         accent: {
-          50:  '#fff7ed',
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#9a3412',
-          900: '#7c2d12',
+          50:  '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+        },
+        coral: {
+          50:  '#fff5f5',
+          100: '#ffe3e3',
+          200: '#ffc9c9',
+          300: '#ffa8a8',
+          400: '#ff8787',
+          500: '#ff6b6b',
+          600: '#fa5252',
+          700: '#f03e3e',
+          800: '#e64980',
+          900: '#bd1a55',
         },
         surface: {
           50:  '#f8fafc',
@@ -41,8 +54,8 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'hero-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'card-gradient': 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)',
+        'hero-gradient': 'linear-gradient(135deg, #4f46e5 0%, #14b8a6 50%, #ff6b6b 100%)',
+        'card-gradient': 'linear-gradient(135deg, #f5f6ff 0%, #ccfbf1 100%)',
       },
       boxShadow: {
         'soft': '0 2px 15px -3px rgba(0,0,0,0.07), 0 10px 20px -2px rgba(0,0,0,0.04)',

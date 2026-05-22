@@ -15,7 +15,7 @@ const useAuthStore = create(
         try {
           const res = await authAPI.login({ email, password });
           const { token, user } = res.data;
-          localStorage.setItem('traveloop_token', token);
+          localStorage.setItem('nextstop_token', token);
           set({ user, token, isAuthenticated: true, isLoading: false });
           return { success: true };
         } catch (err) {
@@ -29,7 +29,7 @@ const useAuthStore = create(
         try {
           const res = await authAPI.register({ name, email, password });
           const { token, user } = res.data;
-          localStorage.setItem('traveloop_token', token);
+          localStorage.setItem('nextstop_token', token);
           set({ user, token, isAuthenticated: true, isLoading: false });
           return { success: true };
         } catch (err) {
@@ -42,7 +42,7 @@ const useAuthStore = create(
       },
 
       logout: () => {
-        localStorage.removeItem('traveloop_token');
+        localStorage.removeItem('nextstop_token');
         set({ user: null, token: null, isAuthenticated: false });
       },
 
@@ -58,7 +58,7 @@ const useAuthStore = create(
       },
     }),
     {
-      name: 'traveloop_auth',
+      name: 'nextstop_auth',
       partialize: (state) => ({ user: state.user, token: state.token, isAuthenticated: state.isAuthenticated }),
     }
   )

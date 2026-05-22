@@ -173,7 +173,7 @@ export default function BookingHub() {
                           <p className="text-xs font-bold text-slate-400 group-hover:text-primary-500/80 transition-colors uppercase tracking-wider">
                             Active Trip
                           </p>
-                          <h3 className="font-extrabold text-slate-850 mt-0.5 leading-snug line-clamp-1">
+                          <h3 className="font-extrabold text-slate-800 mt-0.5 leading-snug line-clamp-1">
                             {trip.title}
                           </h3>
                         </div>
@@ -236,7 +236,7 @@ export default function BookingHub() {
               {destination && (
                 <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold">
                   <span className="text-slate-400">Current Destination:</span>
-                  <span className="px-2.5 py-1 rounded-lg bg-primary-50 border border-primary-100 text-primary-750 font-bold">
+                  <span className="px-2.5 py-1 rounded-lg bg-primary-50 border border-primary-100 text-primary-700 font-bold">
                     📍 {destination}
                   </span>
                 </div>
@@ -249,7 +249,7 @@ export default function BookingHub() {
         {/* Booking Cards Grid */}
         <div className="space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-lg font-black text-slate-850 tracking-tight flex items-center gap-2 font-display">
+            <h2 className="text-lg font-black text-slate-800 tracking-tight flex items-center gap-2 font-display">
               <Sparkles className="w-5 h-5 text-primary-600 animate-pulse" />
               Pre-filled Bookings for <span className="text-primary-700 font-extrabold underline decoration-wavy decoration-primary-200">{destination || 'Selected City'}</span>
             </h2>

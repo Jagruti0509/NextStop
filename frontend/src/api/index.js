@@ -6,7 +6,7 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('traveloop_token');
+  const token = localStorage.getItem('nextstop_token');
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
@@ -15,8 +15,8 @@ api.interceptors.response.use(
   (res) => res,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('traveloop_token');
-      localStorage.removeItem('traveloop_user');
+      localStorage.removeItem('nextstop_token');
+      localStorage.removeItem('nextstop_user');
       window.location.href = '/login';
     }
     return Promise.reject(error);

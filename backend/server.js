@@ -9,7 +9,7 @@ const { errorHandler } = require('./src/middleware/errorHandler');
 const app = express();
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ origin: [/http:\/\/localhost:\d+/], credentials: true }));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -38,7 +38,7 @@ const PORT = process.env.PORT || 5000;
 const start = async () => {
   await syncDatabase();
   app.listen(PORT, () => {
-    console.log(`🚀 Traveloop API running on http://localhost:${PORT}`);
+    console.log(`🚀 NextStop API running on http://localhost:${PORT}`);
   });
 };
 
